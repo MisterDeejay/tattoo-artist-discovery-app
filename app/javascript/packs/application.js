@@ -3,11 +3,11 @@
 
 import React from "react";
 import ReactDOM from "react-dom";
-import LoginPage from "../components/LoginPage";
+import UserLocationMap from "../components/UserLocationMap";
 
 document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(
-    <LoginPage />,
+    <UserLocationMap />,
     document.body.appendChild(document.createElement("div"))
   );
 });
