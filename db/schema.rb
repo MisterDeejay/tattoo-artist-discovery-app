@@ -10,9 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_02_195537) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_19_232319) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "artists", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "biography"
+    t.string "style"
+    t.string "contact_info"
+    t.string "website"
+    t.string "instagram_handle"
+    t.float "rating", default: 0.0
+    t.integer "reviews_count", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["instagram_handle"], name: "index_artists_on_instagram_handle", unique: true
+    t.index ["name"], name: "index_artists_on_name"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
